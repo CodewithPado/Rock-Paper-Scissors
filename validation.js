@@ -60,3 +60,28 @@ function playRound(playerSelection,computerSelection){
     }
   }
 }
+// Create game function that will play 5 rounds 
+// Make a for loop to loop through the playRound function 5 times
+// Prompt the user for input make it case-insensitive 
+function game(){
+  for(i = 1; i < 6; i++) {
+    console.log("Round" + i);
+    let playerSelection= prompt("Choose rock paper or scissors").toLowerCase();
+    while(playerSelection !== "rock" && playerSelection !=="paper" && playerSelection !== "scissors"){
+      playerSelection = prompt("Choose a valid input: rock, paper or scissors").toLowerCase();
+    }
+    console.log(computerSelection= getComputerChoice());
+    console.log(game(playRound(playerSelection,computerSelection)));
+// Declare the outcome of the game
+    if(playerScore > computerScore){
+      console.log("Well-done! You beat the computer!");
+    }
+    else if (computerScore> playerScore){
+      console.log("You lost. Better luck next time.");
+
+    }
+    else{
+      console.log("How strange! It ends in a tie!");
+    }
+  }
+}
