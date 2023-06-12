@@ -20,7 +20,7 @@ let computerScore = 0;
 
 // Create playRound function with (playerSelection,computerSelection)
 // Compare the two parameters players
-// giDeclare the outcome of the round
+// Declare the outcome of the round
 function playRound(playerSelection,computerSelection){
   if (playerSelection === computerSelection){
     return("It's a tie!");
@@ -60,9 +60,11 @@ function playRound(playerSelection,computerSelection){
     }
   }
 }
+
 // Create game function that will play 5 rounds 
 // Make a for loop to loop through the playRound function 5 times
 // Prompt the user for input make it case-insensitive 
+// Declare the outcome of the game
 function game(){
   for(i = 1; i < 6; i++) {
     console.log("Round" + i);
@@ -72,7 +74,6 @@ function game(){
     }
     console.log(computerSelection= getComputerChoice());
     console.log(game(playRound(playerSelection,computerSelection)));
-// Declare the outcome of the game
     if(playerScore > computerScore){
       console.log("Well-done! You beat the computer!");
     }
@@ -82,6 +83,21 @@ function game(){
     }
     else{
       console.log("How strange! It ends in a tie!");
+    }
+// Create playAgain variable 
+// Prompt user if they would like to playAgain
+// Add while loop to make sure input is "yes" or "no"
+    let playAgain = prompt("Would you like to play again?: Choose yes or no").toLowerCase();
+    while(playAgain!== "yes" && playAgain !=="no"){
+      playAgain = prompt("Choose either yes or no").toLowerCase();
+    }
+    if(playAgain === "yes"){
+      playerScore = 0;
+      computerScore = 0;
+      game();
+    }
+    else{
+    console.log("Ok, goodbye");
     }
   }
 }
