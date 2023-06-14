@@ -2,6 +2,7 @@
 
 ## Gif
 ![Alt text](Rps.gif)
+<img src="Rps.gif"?raw=true" width="200px">
 ## Inspiration 
 My whole mindset on programming as a whole changed from one video! In the video "How to Begin Thinking Like a Programmer", Andy Harris explained the importance of understanding the problem, writing algorithms and pseudocode, and breaking down big problems into smaller sub-problems. His methods to programming are very helpful. One quote that really stuck with me was:*"The secret isn't the code, the secret is the algorithms and data."*
 ## Objective 
@@ -16,7 +17,8 @@ In making the rock paper scissors game I did the following:
 * Used for and while loops
 * Prompted the user for input 
 
-My algorithm starts with the following:
+My algorithm starts with the following:__
+
 ```// Create function called getComputerChoice```
 ```// Make randomNumber variable that randomly picks between 3 numbers using Math.Floor and Math.random```
 ```// Assign each number to each of the 3 choices (rock,paper and scissors)```
@@ -32,7 +34,8 @@ My algorithm starts with the following:
 ```// Prompt user if they would like to playAgain```
 ```// Add while loop to make sure input is "yes" or "no"```
 
-First I created the getComputerChoice function. I declared a randomNumber variable with a Math.floor and Math.random *3 properties to randomly select out of the 3 numbers. Then I assigned each of the three choices (rock, paper, or scissors) to each of the three numbers.
+First I created the getComputerChoice function. I declared a randomNumber variable with a Math.floor and Math.random *3 properties to randomly select out of the 3 numbers. Then I assigned each of the three choices (rock, paper, or scissors) to each of the three numbers.__
+
 ```function getComputerChoice(){```
   ```let randomNumber= (Math.floor(Math.random))* 3;```
   ```if(randomNumber=== 0){```
@@ -46,11 +49,13 @@ First I created the getComputerChoice function. I declared a randomNumber variab
   ```}```
 ```}```
 
-I declared two variables to store both the player and computer's score
+I declared two variables to store both the player and computer's score.__
+
 ```let playerScore = 0;``` 
 ```let computerScore = 0;```
 
-Then I created a playRound function with two parameters (playerSelection,computerSelection). Within this function I compared the playerSelection (the dependent parameter) to the computerSelection (the independent parameter). I used template literals to print the result in the event of a winner to the user. 
+Then I created a playRound function with two parameters (playerSelection,computerSelection). Within this function I compared the playerSelection (the dependent parameter) to the computerSelection (the independent parameter). I used template literals to print the result in the event of a winner to the user.__
+
 ```function playRound(playerSelection,computerSelection){```
   ```if (playerSelection === computerSelection){```
     ```return("It's a tie!");```
@@ -86,10 +91,12 @@ Then I created a playRound function with two parameters (playerSelection,compute
     ```}```
   ```}```
 ```}```
-For each round there wasn't a tie I incremented the score of the winner.
+For each round there wasn't a tie I incremented the score of the winner.__
+
 ```computerScore++;``` or ```playerScore++;```
 
-Next I created a game function. In this function I used a for loop to loop through the playRound function 5 times making the game 5 rounds. I prompted the user for input here and then implemented a while loop to make sure the user input was valid. To determine the outcome of the game I compared the accumulated playerScore to the computerScore. Using if-else statements I then printed the outcome to the user (win, loss or tie).
+Next I created a game function. In this function I used a for loop to loop through the playRound function 5 times making the game 5 rounds. I prompted the user for input here and then implemented a while loop to make sure the user input was valid. To determine the outcome of the game I compared the accumulated playerScore to the computerScore. Using if-else statements I then printed the outcome to the user (win, loss or tie).__
+
 ```function game(){```
   ```for(i = 1; i < 6; i++) {```
     ```console.log("Round" + i);```
@@ -109,7 +116,8 @@ Next I created a game function. In this function I used a for loop to loop throu
       ```console.log("How strange! It ends in a tie!");```
     ```}```
 
-Finally, I declared a playAgain variable that prompts the user if they would like to play again. I used a while loop to continuously prompt the user until their input was valid. Then using a conditional if-else statement, if the user entered "yes" I'd reset both scores to 0 and invoke the game function. Else the game would end.
+Finally, I declared a playAgain variable that prompts the user if they would like to play again. I used a while loop to continuously prompt the user until their input was valid. Then using a conditional if-else statement, if the user entered "yes" I'd reset both scores to 0 and invoke the game function. Else the game would end.__
+
   ```let playAgain = prompt("Would you like to play again?: Choose yes or no").toLowerCase();```
     ```while(playAgain!== "yes" && playAgain !=="no"){```
       ```playAgain = prompt("Choose either yes or no").toLowerCase();```
