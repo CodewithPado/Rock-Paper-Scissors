@@ -48,6 +48,19 @@ First I created the getComputerChoice function. I declared a randomNumber variab
   ```}```<br>
 ```}```<br>
 
+```function getComputerChoice(){```<br>
+  ```let randomNumber= (Math.floor(Math.random))* 3;```<br>
+  ```if(randomNumber=== 0){```<br>
+    ```return ("rock");```<br>
+  ```}```<br>
+  ```else if(randomNumber === 1){```<br>
+    ```return ("paper");```<br>
+  ```}```<br>
+  ```else{```<br>
+    ```return ("scissors");```<br>
+  ```}```<br>
+```}```<br>
+
 I declared two variables to store both the player and computer's score.<br>
 ```let playerScore = 0;``` <br>
 ```let computerScore = 0;```
@@ -93,6 +106,25 @@ For each round there wasn't a tie I incremented the score of the winner.<br>
 ```computerScore++;``` or ```playerScore++;```<br>
 
 Next I created a game function. In this function I used a for loop to loop through the playRound function 5 times making the game 5 rounds. I prompted the user for input here and then implemented a while loop to make sure the user input was valid. To determine the outcome of the game I compared the accumulated playerScore to the computerScore. Using if-else statements I then printed the outcome to the user (win, loss or tie).
+
+```function game(){```<br>
+  ```for(i = 1; i < 6; i++) {```<br>
+    ```console.log("Round" + i);```<br>
+    ```let playerSelection= prompt("Choose rock paper or scissors").toLowerCase();```<br>
+    ```while(playerSelection !== "rock" && playerSelection !=="paper" && playerSelection !== "scissors"){```<br>
+      ```playerSelection = prompt("Choose a valid input: rock, paper or scissors").toLowerCase();```<br>
+    ```}```<br>
+    ```console.log(computerSelection= getComputerChoice());```<br>
+    ```console.log(game(playRound(playerSelection,computerSelection)));```<br>
+    ```if(playerScore > computerScore){```<br>
+      ```console.log("Well-done! You beat the computer!");```<br>
+    ```}```<br>
+    ```else if (computerScore> playerScore){```<br>
+      ```console.log("You lost. Better luck next time.");```<br>
+    ```}```<br>
+    ```else{```<br>
+      ```console.log("How strange! It ends in a tie!");```<br>
+    ```}```<br>
 
 ```function game(){```<br>
   ```for(i = 1; i < 6; i++) {```<br>
