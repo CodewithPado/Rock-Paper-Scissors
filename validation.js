@@ -18,86 +18,63 @@ function getComputerChoice(){
 let playerScore = 0;
 let computerScore = 0;
 
+/*Create 3 buttons for each playSelection(rock,paper,scissors) with id's & a class attached*/
+// add eventListeners for each button
+var button = document.getElementById('buttonRock').addEventListener('click', buttonClick);
+var button = document.getElementById('buttonPaper').addEventListener('click', buttonClick);
+var button = document.getElementById('buttonScissors').addEventListener('click', buttonClick);
+/* Create buttonClick functions for each button that calls the playRound function*/
+function buttonClick(e){
+  playRound(playerSelection, computerSelection);
+  console.log(e.target);
+
+}
+function buttonClick(e){
+  playRound(playerSelection, computerSelection);
+  console.log(e.target);
+}
+function buttonClick(e){
+  playRound(playerSelection, computerSelection);
+  console.log(e.target);
+}
+
 // Create playRound function with (playerSelection,computerSelection)
 // Compare the two parameters players
 // Declare the outcome of the round
-function playRound(playerSelection,computerSelection){
+function playRound(playerSelection, computerSelection){
   if (playerSelection === computerSelection){
-    return("It's a tie!");
+    console.log("It's a tie!");
   }
-  else if(playerSelection === "rock"){
-        
+  else if(playerSelection === "rock"){    
     if(computerSelection === "scissors"){
       playerScore++;
-      return(`You chose ${playerSelection} and the computer chose${computerSelection}. You won! Rock beats scissors.`);
+      console.log(`You chose ${playerSelection} and the computer chose${computerSelection}. You won! Rock beats scissors.`);
+      playerScore++;
     }
     else{
+      console.log(`You chose ${playerSelection} and the computer chose${computerSelection}. You lost! Paper beats rock.`);
       computerScore++;
-      return(`You chose ${playerSelection} and the computer chose${computerSelection}. You lost! Paper beats rock.`);
     }
   }
   else if(playerSelection === "paper"){
-        
     if(computerSelection === "rock"){
+      console.log(`You chose ${playerSelection} and the computer chose${computerSelection}. You won! Paper beats rock.`);
       playerScore++;
-      return(`You chose ${playerSelection} and the computer chose${computerSelection}. You won! Paper beats rock.`);
     }
 
     else{
+      console.log(`You chose ${playerSelection} and the computer chose${computerSelection}. You lost! Scissors beats paper.`);
       computerScore++;
-      return(`You chose ${playerSelection} and the computer chose${computerSelection}. You lost! Scissors beats paper.`);
     }
   }
   else if(playerSelection === "scissors"){
-        
     if(computerSelection === "paper"){
+      console.log(`You chose ${playerSelection} and the computer chose${computerSelection}. You won! Scissors beats paper.`);
       playerScore++;
-      return(`You chose ${playerSelection} and the computer chose${computerSelection}. You won! Scissors beats paper.`);
     }
     else{
+      console.log(`You chose ${playerSelection} and the computer chose${computerSelection}. You lost! Rock beats scissors.`);
       computerScore++;
-      return(`You chose ${playerSelection} and the computer chose${computerSelection}. You lost! Rock beats scissors.`);
-    }
-  }
-}
-
-// Create game function that will play 5 rounds 
-// Make a for loop to loop through the playRound function 5 times
-// Prompt the user for input make it case-insensitive 
-// Declare the outcome of the game
-function game(){
-  for(i = 1; i < 6; i++) {
-    console.log("Round" + i);
-    let playerSelection= prompt("Choose rock paper or scissors").toLowerCase();
-    while(playerSelection !== "rock" && playerSelection !=="paper" && playerSelection !== "scissors"){
-      playerSelection = prompt("Choose a valid input: rock, paper or scissors").toLowerCase();
-    }
-    console.log(computerSelection= getComputerChoice());
-    console.log(game(playRound(playerSelection,computerSelection)));
-    if(playerScore > computerScore){
-      console.log("Well-done! You beat the computer!");
-    }
-    else if (computerScore> playerScore){
-      console.log("You lost. Better luck next time.");
-
-    }
-    else{
-      console.log("How strange! It ends in a tie!");
-    }
-// Create playAgain variable 
-// Prompt user if they would like to playAgain
-// Add while loop to make sure input is "yes" or "no"
-    let playAgain = prompt("Would you like to play again?: Choose yes or no").toLowerCase();
-    while(playAgain!== "yes" && playAgain !=="no"){
-      playAgain = prompt("Choose either yes or no").toLowerCase();
-    }
-    if(playAgain === "yes"){
-      playerScore = 0;
-      computerScore = 0;
-      game();
-    }
-    else{
-    console.log("Ok, goodbye");
     }
   }
 }
