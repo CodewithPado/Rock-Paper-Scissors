@@ -1,11 +1,11 @@
 # Rock-Paper-Scissors
 
-## Gif
-![Alt text](./rps.gif)
 ## Inspiration 
 My whole mindset on programming as a whole changed from one video! In the video "How to Begin Thinking Like a Programmer", Andy Harris explained the importance of understanding the problem, writing algorithms and pseudocode, and breaking down big problems into smaller sub-problems. His methods to programming are very helpful. One quote that really stuck with me was:*"The secret isn't the code, the secret is the algorithms and data."*
+
 ## Objective 
 In the Odin Project I was tasked with creating a rousing game of rock paper scissors. It would involve the user playing against a computer on a browser console.
+
 ## My process 
 In making the rock paper scissors game I did the following:
 * Defined and called functions
@@ -34,19 +34,6 @@ My algorithm starts with the following:
 ```// Add while loop to make sure input is "yes" or "no"```<br>
 
 First I created the getComputerChoice function. I declared a randomNumber variable with a Math.floor and Math.random *3 properties to randomly select out of the 3 numbers. Then I assigned each of the three choices (rock, paper, or scissors) to each of the three numbers.
-
-```function getComputerChoice(){```<br>
-  ```let randomNumber= (Math.floor(Math.random))* 3;```<br>
-  ```if(randomNumber=== 0){```<br>
-    ```return ("rock");```<br>
-  ```}```<br>
-  ```else if(randomNumber === 1){```<br>
-    ```return ("paper");```<br>
-  ```}```<br>
-  ```else{```<br>
-    ```return ("scissors");```<br>
-  ```}```<br>
-```}```<br>
 
 ```function getComputerChoice(){```<br>
   ```let randomNumber= (Math.floor(Math.random))* 3;```<br>
@@ -106,25 +93,6 @@ For each round there wasn't a tie I incremented the score of the winner.<br>
 ```computerScore++;``` or ```playerScore++;```<br>
 
 Next I created a game function. In this function I used a for loop to loop through the playRound function 5 times making the game 5 rounds. I prompted the user for input here and then implemented a while loop to make sure the user input was valid. To determine the outcome of the game I compared the accumulated playerScore to the computerScore. Using if-else statements I then printed the outcome to the user (win, loss or tie).
-
-```function game(){```<br>
-  ```for(i = 1; i < 6; i++) {```<br>
-    ```console.log("Round" + i);```<br>
-    ```let playerSelection= prompt("Choose rock paper or scissors").toLowerCase();```<br>
-    ```while(playerSelection !== "rock" && playerSelection !=="paper" && playerSelection !== "scissors"){```<br>
-      ```playerSelection = prompt("Choose a valid input: rock, paper or scissors").toLowerCase();```<br>
-    ```}```<br>
-    ```console.log(computerSelection= getComputerChoice());```<br>
-    ```console.log(game(playRound(playerSelection,computerSelection)));```<br>
-    ```if(playerScore > computerScore){```<br>
-      ```console.log("Well-done! You beat the computer!");```<br>
-    ```}```<br>
-    ```else if (computerScore> playerScore){```<br>
-      ```console.log("You lost. Better luck next time.");```<br>
-    ```}```<br>
-    ```else{```<br>
-      ```console.log("How strange! It ends in a tie!");```<br>
-    ```}```<br>
 
 ```function game(){```<br>
   ```for(i = 1; i < 6; i++) {```<br>

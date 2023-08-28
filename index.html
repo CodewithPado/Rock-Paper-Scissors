@@ -4,14 +4,38 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
     <title>Rock Paper Scissors</title>
 </head>
 <body>
-    <button id="buttonRock" class="buttons">Rock</button>
-    <button id="buttonPaper" class="buttons">Paper</button>
-    <button id="buttonScissors" class="buttons">Scissors</button>
+  <header>
+    <h1>Rock Paper Scissors</h1>
+  </header>
+  
+  <div class="score-board">
+    <div id="round" class="rd">Round:0</div>
+    <div id="player-label"class="badge">Player</div>
+    <div id="computer-label" class="badge" >Computer</div>
+    <span id="player-score">0</span>:<span id="computer-score">0</span>
+  </div>
 
-    
+  <div class="result">
+    <p></p>
+  </div>
+
+  <div class="choices">
+    <div class="choice" id="Rock">
+      <img src="images/rock.png" alt="Image of a rock hand gesture" width="50px" height="50px">
+    </div>
+    <div class="choice"id="Paper">
+      <img src="images/paper.png" alt="Image of a paper hand gesture" width="50px" height="50px">
+    </div>
+    <div class="choice"id="Scissors">
+      <img src="images/scissors.png" alt="Image of a scissors hand gesture" width="50px" height="50px">
+    </div>
+  </div>
+
+  <p id="action-message">Pick your choice</p>
+<script defer src="validation.js"></script>
 </body>
-<script src="validation.js"></script>
 </html>
