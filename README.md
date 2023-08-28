@@ -1,11 +1,11 @@
 # Rock-Paper-Scissors
 
-## Gif
-![Alt text](./rps.gif)
 ## Inspiration 
 My whole mindset on programming as a whole changed from one video! In the video "How to Begin Thinking Like a Programmer", Andy Harris explained the importance of understanding the problem, writing algorithms and pseudocode, and breaking down big problems into smaller sub-problems. His methods to programming are very helpful. One quote that really stuck with me was:*"The secret isn't the code, the secret is the algorithms and data."*
+
 ## Objective 
 In the Odin Project I was tasked with creating a rousing game of rock paper scissors. It would involve the user playing against a computer on a browser console.
+
 ## My process 
 In making the rock paper scissors game I did the following:
 * Defined and called functions
@@ -112,7 +112,6 @@ Next I created a game function. In this function I used a for loop to loop throu
     ```else{```<br>
       ```console.log("How strange! It ends in a tie!");```<br>
     ```}```<br>
-
 
 Finally, I declared a playAgain variable that prompts the user if they would like to play again. I used a while loop to continuously prompt the user until their input was valid. Then using a conditional if-else statement, if the user entered "yes" I'd reset both scores to 0 and invoke the game function. Else the game would end.
 
