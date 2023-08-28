@@ -48,19 +48,6 @@ First I created the getComputerChoice function. I declared a randomNumber variab
   ```}```<br>
 ```}```<br>
 
-```function getComputerChoice(){```<br>
-  ```let randomNumber= (Math.floor(Math.random))* 3;```<br>
-  ```if(randomNumber=== 0){```<br>
-    ```return ("rock");```<br>
-  ```}```<br>
-  ```else if(randomNumber === 1){```<br>
-    ```return ("paper");```<br>
-  ```}```<br>
-  ```else{```<br>
-    ```return ("scissors");```<br>
-  ```}```<br>
-```}```<br>
-
 I declared two variables to store both the player and computer's score.<br>
 ```let playerScore = 0;``` <br>
 ```let computerScore = 0;```
@@ -126,24 +113,6 @@ Next I created a game function. In this function I used a for loop to loop throu
       ```console.log("How strange! It ends in a tie!");```<br>
     ```}```<br>
 
-```function game(){```<br>
-  ```for(i = 1; i < 6; i++) {```<br>
-    ```console.log("Round" + i);```<br>
-    ```let playerSelection= prompt("Choose rock paper or scissors").toLowerCase();```<br>
-    ```while(playerSelection !== "rock" && playerSelection !=="paper" && playerSelection !== "scissors"){```<br>
-      ```playerSelection = prompt("Choose a valid input: rock, paper or scissors").toLowerCase();```<br>
-    ```}```<br>
-    ```console.log(computerSelection= getComputerChoice());```<br>
-    ```console.log(game(playRound(playerSelection,computerSelection)));```<br>
-    ```if(playerScore > computerScore){```<br>
-      ```console.log("Well-done! You beat the computer!");```<br>
-    ```}```<br>
-    ```else if (computerScore> playerScore){```<br>
-      ```console.log("You lost. Better luck next time.");```<br>
-    ```}```<br>
-    ```else{```<br>
-      ```console.log("How strange! It ends in a tie!");```<br>
-    ```}```<br>
 
 Finally, I declared a playAgain variable that prompts the user if they would like to play again. I used a while loop to continuously prompt the user until their input was valid. Then using a conditional if-else statement, if the user entered "yes" I'd reset both scores to 0 and invoke the game function. Else the game would end.
 
@@ -164,4 +133,4 @@ Finally, I declared a playAgain variable that prompts the user if they would lik
 ```game()```
 
 ## Foresight 
-In th first part of this project, I applied some of the basics I've learned from the Odin Project. I'm satisfied for where it's at, however I'm looking forward to revisiting this project and searching for ways to improve its efficiency and add more features to it. One of which being adding buttons to the project in part 2.
+In the first part of this project, I applied some of the basics I've learned from the Odin Project. I'm satisfied for where it's at, however I'm looking forward to revisiting this project and searching for ways to improve its efficiency and add more features to it. One of which being adding buttons to the project in part 2.
