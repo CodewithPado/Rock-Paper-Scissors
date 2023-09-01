@@ -24,11 +24,6 @@ function getComputerChoice(){
   return choices[randomNumber];
 }
 
-//tie function
-function tie (playerSelection,computerSelection){
-  return result_p.innerHTML =`(Player) ${playerSelection} equals ${computerSelection} (computer). Tie!`;
-}
-
 //win function with span.innerHTML to have the score change in the DOM
 function win(playerSelection,computerSelection){
   playerScore++;
@@ -45,6 +40,11 @@ function lose(playerSelection,computerSelection){
   return result_p.innerHTML = `(Computer) ${computerSelection} beats ${playerSelection} (player) .  You lose!`;
 }
 
+//tie function
+function tie (playerSelection,computerSelection){
+  return result_p.innerHTML =`(Player) ${playerSelection} equals ${computerSelection} (computer). Tie!`;
+}
+
 //Add event listener functions for each button
 rock_div.addEventListener('click',function(){
   playRound("Rock");
@@ -59,16 +59,11 @@ scissors_div.addEventListener('click',function(){
 });
 
 //Separate playRound function into smaller sub-functions
-/*setTimeout function used to create a transition from the final results and the game resetting*/
+/* Use setTimeout to create a transition from the final results and the game resetting*/
 function playRound(playerSelection){
   addRound();
   let computerSelection = getComputerChoice();
   switch(playerSelection + computerSelection){
-    case "RockRock":
-    case "PaperPaper":
-    case "ScissorsScissors":
-      tie(playerSelection, computerSelection);
-    break;
     case "RockScissors":
     case "PaperRock":
     case "ScissorsPaper":
@@ -79,6 +74,11 @@ function playRound(playerSelection){
     case "ScissorsRock":
       lose(playerSelection, computerSelection);
     break;
+    case "RockRock":
+    case "PaperPaper":
+    case "ScissorsScissors":
+      tie(playerSelection, computerSelection);
+    break;
   }
   if (currentRound === 5){
     displayFinalResult();
@@ -86,7 +86,7 @@ function playRound(playerSelection){
   }
 }
     
-//Invoke isWinner function once 5 rounds are played
+//Invoke this function once 5 rounds are played
 function displayFinalResult(){
   if(playerScore > computerScore){
     return result_p.innerHTML = "Congrats! You beat the computer";
